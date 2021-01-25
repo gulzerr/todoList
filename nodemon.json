@@ -1,7 +1,7 @@
 {
     "env": {
         "MONGO_USER": "gulzer",
-        "MONGO_PASSWORD": "e5FyrFiYLhGHaDYp",
+        "MONGO_PASSWORD": "",
         "MONGO_DB": "todo"
     }
 }
