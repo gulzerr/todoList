@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Types;
 
 // var data = [{item:'Get milk'}, {item:'Workout'}, {item:'Coding'}]
 var urlEncodedParser = bodyParser.urlencoded({extended: false});
@@ -20,7 +21,8 @@ module.exports = function(app){
         // get data from mongo
         Todo.find({}, function(err, data){
             if(err) throw err;
-            res.render('todo', {todos: data});
+
+            res.render('todo', {todos: data.map(v => ({ id: v._id.toString(), item: v.item }))});
         })
     });
 
@@ -34,11 +36,10 @@ module.exports = function(app){
 
     app.delete('/todo/:item', function(req,res){
         // remove item from mongodb
-        var sub = req.params.item.replace(/\-/g," ");
-        sub = sub.substring(1,sub.length-1);
+        var sub = req.params.item.replace(/\-/g,"");
         console.log(sub.length);
-        console.log('fuck');
-        Todo.deleteOne({item: sub}, function (err, data) { 
+        console.log(sub);
+        Todo.deleteOne({_id: ObjectId(sub)}, function (err, data) { 
             if (err) console.log(err);;
             res.send(data);
          })

@@ -17,15 +17,12 @@ todoController(app);
 
 
 mongoose.connect(`mongodb+srv://${process.env.MONGO_USER
-        }:${process.env.MONGO_PASSWORD
-        }@cluster0-0aum2.mongodb.net/${process.env.MONGO_DB
-        }?retryWrites=true&w=majority`
-    ).then(() => {
-    app.listen(port,function(){
-        console.log('app listnening on port '+ port);
+    }:${process.env.MONGO_PASSWORD
+    }@cluster0-0aum2.mongodb.net/${process.env.MONGO_DB
+    }?retryWrites=true&w=majority`).then(() => {
+    app.listen(port, function () {
+        console.log('app listnening on port ' + port);
     });
-    }).catch(err => {
+}).catch(err => {
     console.log(err);
-    }
-);
-
+});

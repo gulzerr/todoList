@@ -1,7 +1,7 @@
 {
-    "env" : {
-        "MONGO_USER" : "Your Use Id",
-        "MONGO_PASSWORD" : "Your Password",
-        "MONGO_DB": " Your Database Name"
+    "env": {
+        "MONGO_USER": "gulzer",
+        "MONGO_PASSWORD": "e5FyrFiYLhGHaDYp",
+        "MONGO_DB": "todo"
     }
 }

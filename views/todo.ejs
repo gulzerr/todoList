@@ -8,8 +8,7 @@
     <title>Todo List</title>
     <script type="text/javascript">
         console.firebug=true;
-        
-      </script>
+    </script>
 </head>
 <body>
     <h1>My Todo List</h1>
@@ -20,7 +19,7 @@
         </form>
         <ul>
             <% for(var i=0; i< todos.length; i++){ %>
-                <li> <%= todos[i].item %> </li>
+                <li onclick="deleteTodo('<%= todos[i].id %>')"><%= todos[i].item %></li>
             <% }; %>
         </ul>
     </div>
